@@ -1,12 +1,10 @@
-#include "kernel/types.h"
-#include "kernel/stat.h"
-#include "user/user.h"
+#include "../kernel/types.h"
+#include "../kernel/stat.h"
+#include "./user.h"
 
 char buf[512];
 
-void
-cat(int fd)
-{
+void cat(int fd) {
   int n;
 
   while((n = read(fd, buf, sizeof(buf))) > 0) {
@@ -21,8 +19,7 @@ cat(int fd)
   }
 }
 
-int
-main(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
   int fd, i;
 
